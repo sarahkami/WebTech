@@ -2,7 +2,7 @@
       height: 100%;
     }
     body {
-      background-color: #9988DD;
+      background-color: #660099;
       height: 100%;
       margin: 0;
       font-family: Cuprum, Verdana, Arial, sans-serif;
@@ -22,6 +22,7 @@
       background-color: #660099;
     }
     .down{
+      position: relative;
       top: 80%;
       width: 100%;
       height: 90%;
