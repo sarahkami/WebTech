@@ -1,0 +1,94 @@
+ html{
+      height: 100%;
+    }
+    body {
+      background-color: #9988DD;
+      height: 100%;
+      margin: 0;
+      font-family: Cuprum, Verdana, Arial, sans-serif;
+    }
+    .outside{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #660099;
+      float: left;
+    }
+    .inside{
+      position: absolute;
+      top: 30%;
+      width: 100%;
+      height: auto;
+      background-color: #660099;
+    }
+    .down{
+      position: relative;
+      top: 80%;
+      width: 100%;
+      height: 90%;
+      background-color: white;
+      float: left;
+      z-index: 1;
+    }
+    .table{
+      width: 50%;
+      margin: 0 auto;
+      padding-top: 10%;
+      background-color: #660099;
+    }
+    .farbe{
+      color: #660099;
+      font-size: 24px;
+      font-family: Cuprum, Verdana, Arial, sans-serif;
+      text-align: center;
+    }
+    table, th, td{
+      width: 100%;
+      text-align: left;
+      font-size: 20px;
+      color: white;
+      border: white;
+      border-collapse: collapse;
+    }
+    img{
+      height: 100;
+    }
+    h1 {
+      color: white;
+      font-family: Bangers, Verdana,Arial, sans-serif;
+      font-size: 60px;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+    p {
+      color: white;
+      font-size: 18px;
+      font-family: Cuprum, Verdana, Arial, sans-serif;
+      text-align: center;
+    }
+    .navigation {
+      /*#-webkit-font-smoothing: subpixel-antialiased;*/
+      /*font-weight: bold;*/
+      list-style: none outside none;
+      display: block;
+      vertical-align: top;
+      right: 0px;
+      top: 0px;
+      position: fixed;
+      z-index: 1;
+      padding: 0.5% 3% 0% 0%;
+      #color: white;
+      font-size: 14px;
+      font-family: Cuprum, Verdana, Arial, sans-serif;
+    }
+    a{
+      color: white;
+      text-decoration: none;
+    }
+    a:hover{
+      color: #9966DD;
+    }
+    li{
+      display: inline;
+      padding-left: 25px;
+    }
