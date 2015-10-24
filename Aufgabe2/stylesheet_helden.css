@@ -35,27 +35,64 @@
       width: 50%;
       margin: 0 auto;
       padding-top: 12%;
+      padding-bottom: 12%;
       background-color: #660099;
     }
     .farbe{
       color: #660099;
-      font-size: 24px;
+      font-size: 22px;
       font-family: Cuprum, Verdana, Arial, sans-serif;
       text-align: center;
+      line-height: 150%;
+      /*padding-top: 12%;*/
+    }
+    .ueberschrift{
+      color: #660099;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: Cuprum, Verdana, Arial, sans-serif;
+      text-align: center;
+      line-height: 340%;
+      padding-bottom: 20px;
+    }
+    .bio{
+      /*background-color: #669999;*/
+      padding: 10% 10% 10% 10%;
     }
     table, th, td{
       width: 1%;
-      text-align: center;
+      text-align: left;
       font-size: 20px;
       color: white;
       border: white;
       border-collapse: collapse;
+      padding-left: 20%;
     }
     th{
       font-size: 25px;
     }
-    img{
+    td{
+      text-align: left;
+      padding-left: 20%;
+    }
+    .thumbnail{
       height: 80px;
+    }
+    .logo{
+      position: absolute;
+      left:44%;
+      padding-top: 25px;
+      height: 100px;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    img{
+      float: left;
+      margin: 0px 10px 10px 0px;
+    }
+    .bildgroesse{
+      height: 14px;
     }
     h1 {
       color: white;
