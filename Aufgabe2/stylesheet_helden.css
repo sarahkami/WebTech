@@ -38,6 +38,13 @@
       padding-bottom: 12%;
       background-color: #660099;
     }
+    .contact{
+      padding-top: 15%;
+      width: 40%;
+      margin: 0 auto;
+      display: block;
+      padding-left: 20%;
+    }
     .farbe{
       color: #660099;
       font-size: 22px;
@@ -101,11 +108,26 @@
       letter-spacing: 3px;
       text-align: center;
     }
-    p {
+    p{
       color: white;
       font-size: 18px;
       font-family: Cuprum, Verdana, Arial, sans-serif;
       text-align: center;
+      /*display: block;*/
+    }
+    .text_links{
+      text-align: left;
+    }
+    input, textarea{
+      width: 180px;
+    }
+
+    label {
+      color: white;
+      font-size: 18px;
+      font-family: Cuprum, Verdana, Arial, sans-serif;
+      text-align: center;
+      line-height: 220%;
     }
     .navigation {
       /*#-webkit-font-smoothing: subpixel-antialiased;*/
@@ -118,7 +140,7 @@
       position: fixed;
       z-index: 1;
       padding: 0.5% 3% 0% 0%;
-      #color: white;
+      color: white;
       font-size: 14px;
       font-family: Cuprum, Verdana, Arial, sans-serif;
     }
