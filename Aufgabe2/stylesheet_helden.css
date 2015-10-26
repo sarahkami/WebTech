@@ -108,6 +108,9 @@
       letter-spacing: 3px;
       text-align: center;
     }
+    .ueberschrift_links{
+      text-align: left;
+    }
     p{
       color: white;
       font-size: 18px;
