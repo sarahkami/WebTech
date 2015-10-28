@@ -132,6 +132,16 @@
       text-align: center;
       line-height: 220%;
     }
+    dt, dd{
+      color: white;
+      font-size: 18px;
+      font-family: Cuprum, Verdana, Arial, sans-serif;
+      line-height: 170%;
+    }
+    dt{
+      font-weight: bold;
+      font-size: 22px;
+    }
     .navigation {
       /*#-webkit-font-smoothing: subpixel-antialiased;*/
       /*font-weight: bold;*/
