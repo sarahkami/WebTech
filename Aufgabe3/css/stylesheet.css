@@ -8,12 +8,14 @@ body {
 }
 
 .masterhead{
-  background-color: #CCAABB;
+  background-color: white; /*#CCCC11;*/
 }
 
 .nav_item{
   position: relative;
   display: inline-block;
+  float: right;
+  padding-top: 22px;
   padding: 12px;
   font-weight: 300;
   color: black;
@@ -31,6 +33,21 @@ body {
   color: black;
 }
 
+.bildunterschrift{
+  color: white;
+}
+
+
+a:hover{
+  text-decoration: bold;
+  color: #333;
+  background-color: none; 
+}
+
+.karusell{
+  position:fixed;
+  z-index:1030;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */

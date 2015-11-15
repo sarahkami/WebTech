@@ -15,18 +15,22 @@
   </head>
   <body>
 
-    <div class="masterhead">
+    <div class="masterhead navbar-fixed-top">
       <div class="container">
-        <div class="navigation">
-          <h1 class="title">Spendlr</h1>
-          <a class="nav_item">Item</a>
-          <a class="nav_item">Item</a>
-          <a class="nav_item">Item</a>
-          <a class="nav_item">Item</a>
-          <a class="nav_item">Item</a>
+        <div>
+          <h1 class="navbar-header title">Spendlr</h1>
+
         </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="nav_item"><a href="#">Start</a></li>
+            <li class="nav_item"><a href="#ueber">Über</a></li>
+            <li class="nav_item"><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
+    <div></div>
 
     <div class="container">
       <div class="header">
@@ -34,7 +38,7 @@
         <p class="description">Das ist eine Beschreibung</p>
     </div>
 
-       <!-- Karussell
+       <!-- Karussell Quelle: http://holdirbootstrap.de/examples/carousel/
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Positionsanzeige -->
@@ -45,29 +49,27 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="media/ag1.jpg" alt="Erste Folie">
+          <img class="first-slide" src="media/ag11.jpg" alt="Erste Folie">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Spendlr</h1>
-              <p>We are Spendlr.</p>
-              <p>Your wishlist in the web.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Melde dich noch heute an</a></p>
+              <h1 class="bildunterschrift">Hallo</h1>
+              <p class="bildunterschrift">Wir sind Spendlr.</p>
+              <p class="bildunterschrift">Dein Wunschzettel im Web.</p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="media/ag2.jpg" alt="Zweite Folie">
+          <img class="second-slide" src="media/ag10.jpg" alt="Zweite Folie">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Spendlr</h1>
-              <p>We are Spendlr.</p>
-              <p>Your wishlist in the web.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Mehr erfahren</a></p>
+              <h1>Neugierig?</h1>
+              <p>Guck dir tolle Boards unserer User an.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Ausprobieren</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="media/ag3.jpg" alt="Dritte Folie">
+          <img class="third-slide" src="media/ag6.jpg" alt="Dritte Folie">
           <div class="container">
             <div class="carousel-caption">
               <h1>Nicht zögern</h1>
@@ -91,18 +93,32 @@
 
       <div class="row">
         <div class="col-md-8 main">
-          <h1>Überschrift</h1>
-          <p>Du brauchst nur ein paar .col-md-*-Klassen, um ein grundlegendes Raster zu erstellen, dessen Spalten auf Smartphones und Tablets (extra-klein bis klein) übereinander und dann ab mittleren Bildschirmgrößen auf Desktop-PCs nebeneinander angeordnet sind. Platziere die Rasterspalten einfach in irgendeiner row.</p>
-          <p>Du brauchst nur ein paar .col-md-*-Klassen, um ein grundlegendes Raster zu erstellen, dessen Spalten auf Smartphones und Tablets (extra-klein bis klein) übereinander und dann ab mittleren Bildschirmgrößen auf Desktop-PCs nebeneinander angeordnet sind. Platziere die Rasterspalten einfach in irgendeiner row.</p>
+          <h3>Über uns</h3>
+          <p>Hier steht ganz toller Text über Spendlr. bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+          <p>Und noch mehr tolle Infos über Spendlr. bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
         </div>
 
-        <div class="col-md-3 col-md-offset-1 sidebar">
-          <h1>Sidebar</h1>
-
+        <div class="col-md-4 sidebar">
+          <ol class="list-unstyled">
+            <h3>Beliebteste Produkte</h3>
+            <li><a href="#">Weihnachtsgeschenke</a></li>
+            <li><a href="#">Handytaschen</a></li>
+            <li><a href="#">Ashley Goldberg</a></li>
+            <li><a href="#">Stempel</a></li>
+            <li><a href="#">Ruby</a></li>
+          </ol>
         </div>
 
       </div>
-    </div>
+
+      <div> 
+
+<footer class="footer">
+      <div class="container">
+        <a class="text-muted" href="#">Impressum</a>
+        <a class="text-muted" href="#">Kontakt</a>
+      </div>
+    </footer>
 
 
 
