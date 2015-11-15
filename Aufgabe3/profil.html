@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Spendlr">
+  <meta name="author" content="Sarah">
+
+  <title>Spendlr - Login</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/stylesheet.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="masterhead navbar-fixed-top">
+      <div class="container">
+        <div>
+          <h1 class="navbar-header title"><a href="index.html">Spendlr</a></h1>
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="nav_item"><a href="login.html">Login</a></li>
+            <li class="nav_item"><a href="#" data-toggle="modal" data-target="#login-modal">Profil</a></li>
+            <li class="nav_item"><a href="#">+ Board</a></li>
+            <li class="nav_item"><a href="#">+ Produkt</a></li>
+
+            <!--
+            <li class="nav_item"><p class="text-center"><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Profil</a></p></li>
+            -->
+
+            <!-- Quelle: http://bootsnipp.com/snippets/featured/inline-navbar-search-->
+            <form class="navbar-form" role="search">
+              <div class="input-group">
+                <input type="text" class="form-control pull-right" placeholder="suchen">
+                  <span class="input-group-btn">
+                    <button type="reset" class="btn btn-default">
+                      <span class="glyphicon glyphicon-remove">
+                        <span class="sr-only">Close</span>
+                      </span>
+                    </button>
+                      <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search">
+                          <span class="sr-only">suchen</span>
+                        </span>
+                      </button>
+                  </span>
+              </div>
+            </form>
+            <!-- eigene Search-Bar-->
+            <!--<li><form class="navbar-form" method="GET">
+              <label for="suche"><input type="text" id="suche" name="suche" placeholder="suchen"></label><input type="submit" value="go"></li>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div></div>
+
+    <div class="container">
+      <div class="header">
+    </div>
+      <div class="row login">
+
+
+<!-- Quelle: http://bootsnipp.com/snippets/featured/modal-login-with-jquery-effects -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" align="center">
+          <img class="img-circle" id="img_logo" src="media/funny-cat-pictures.jpg">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </button>
+        </div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+                    <div class="modal-body">
+                <div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span>Meine Daten</span>
+                            </div>
+                <input id="vorname" class="form-control" type="text" placeholder="Vorname" required>
+                <input id="nachname" class="form-control" type="text" placeholder="Nachname" required>
+                <input id="geburtstag" class="form-control" type="text" placeholder="Geburtstag" required>
+                <input id="geschlecht" class="form-control" type="text" placeholder="Geschlecht" required>
+                <input id="interessen" class="form-control" type="text" placeholder="Interessen" required>
+                <input id="info" class="form-control form-control-info" type="text" placeholder="Über mich" required>
+                            <div class="radio">
+                                <label><input type="radio">Profil öffentlich sichtbar</label>
+                            </div>
+                            <div class="radio">
+                            <label><input type="radio">Profil nur für Freunde sichtbar</label>
+                          </div>
+                  </div>
+                <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Profil ändern</button>
+                            </div>
+                </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+                  <div class="modal-body">
+                <div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">Type your e-mail.</span>
+                            </div>
+                <input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+                  </div>
+                <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+                </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+                    <div class="modal-body">
+                <div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Register an account.</span>
+                            </div>
+                <input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                            <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+                  </div>
+                <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                            </div>
+                </div>
+                    </form>
+                    <!-- End | Register Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+      </div>
+    </div>
+
+    <!-- END # MODAL LOGIN -->
+
+
+
+<footer class="footer">
+      <div class="container">
+        <a class="text-muted" href="#">Impressum</a>
+        <a class="text-muted" href="#">Kontakt</a>
+      </div>
+    </footer>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+  </html>

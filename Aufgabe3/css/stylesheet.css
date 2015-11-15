@@ -72,6 +72,15 @@ a:hover{
   line-height: 25px;
 }
 
+.form-control-info{
+  height: 102px;
+}
+
+.radio {
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
 .fixed_footer{
   position: fixed;
 }
