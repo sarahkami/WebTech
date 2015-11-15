@@ -25,6 +25,10 @@ body {
   background-color: white; /*#CCCC11;*/
 }
 
+.masterhead_color{
+  background-image: url(../media/ag7.jpg);
+}
+
 .nav_item{
   position: relative;
   display: inline-block;
