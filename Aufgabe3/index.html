@@ -24,6 +24,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="nav_item"><a href="login.html">Login</a></li>
+            <li class="nav_item"><a href="#" data-toggle="modal" data-target="#login-modal">Profil</a></li>
             <li class="nav_item"><a href="#">+ Board</a></li>
             <li class="nav_item"><a href="#">+ Produkt</a></li>
 
@@ -55,8 +56,83 @@
     <div></div>
 
     <div class="container">
-      <div class="header">
-    </div>
+
+
+
+    <div class="row login">
+
+
+
+<!-- Quelle: http://bootsnipp.com/snippets/featured/modal-login-with-jquery-effects -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" align="center">
+        <img class="img-circle" id="img_logo" src="media/funny-cat-pictures.jpg">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </div>
+              <!-- Begin # DIV Form -->
+        <div id="div-forms">
+              <!-- Begin # Login Form -->
+          <form>
+            <div class="modal-body">
+
+              <div>
+                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                <span>Meine Daten</span>
+              </div>
+              <label for="vorname">Vorname</label>
+              <input id="vorname" class="form-control" type="text" value="Sarah" placeholder="Vorname" required>
+              <label for="nachname">Nachname</label>
+              <input id="nachname" class="form-control" type="text" value="G" placeholder="Nachname" required>
+              <label for="geburtstag">Geburtstag</label>
+              <input id="geburtstag" class="form-control" type="text" value="17.04.1985" placeholder="Geburtstag" required>
+              <label for="geschlecht">Geschlecht</label>
+              <input id="geschlecht" class="form-control" type="text" value="weiblich" placeholder="Geschlecht" required>
+              <label for="interessen">Interessen</label>
+              <input id="interessen" class="form-control" type="text" value="Coding, Karaoke, Zeichnen" placeholder="Interessen" required>
+              <label for="info">Über mich</label>
+              <input id="info" class="form-control form-control-info" type="text" value="" placeholder="Über mich" required>
+
+                <div class="radio">
+                  <label><input type="radio">Profil öffentlich sichtbar</label>
+                </div>
+                  <div class="radio">
+                    <label><input type="radio">Profil nur für Freunde sichtbar</label>
+                  </div>
+
+
+                  <div class="border-line">
+                    <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                    <span>Meine Boards</span>
+                  </div>
+
+                            <select class="form-control" name="Meine Boards">
+                              <option>Handytaschen</option>
+                              <option>Stempel</option>
+                              <option>Stoffe</option>
+                              <option>Bücher</option>
+                              <input type="submit" value="ansehen">
+
+            </div>
+                  <div class="modal-footer">
+                    <div>
+                      <button type="submit" class="btn btn-primary btn-lg btn-block">Profil ändern</button>
+                    </div>
+                  </div>
+
+                  </form>
+                  <!-- End # Login Form -->
+              </div>
+              <!-- End # DIV Form -->
+</div>
+</div>
+</div>
+</div>
+
+
 
        <!-- Karussell Quelle: http://holdirbootstrap.de/examples/carousel/
     ================================================== -->
@@ -94,7 +170,7 @@
             <div class="carousel-caption">
               <h1>Nicht zögern</h1>
                 <p>Fang noch heute an und erstelle einen Account.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Anmelden</a></p>
+              <p><a class="btn btn-lg btn-primary" href="login.html" role="button">Anmelden</a></p>
             </div>
           </div>
         </div>
@@ -131,7 +207,7 @@
 
       </div>
 
-      <div> 
+
 
 <footer class="footer">
       <div class="container">
