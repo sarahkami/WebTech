@@ -7,6 +7,18 @@ body {
   width: 960px;
 }
 
+/*.footer{
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  background-color: #f555f5;
+}*/
+
+.row_ohne_margin{
+  margin-bottom: -40px;
+  margin-top: -50px;
+}
+
 .masterhead{
   background-color: white; /*#CCCC11;*/
 }
@@ -41,6 +53,14 @@ body {
   color: white;
 }
 
+.kleine_ueberschrift{
+  line-height: 12px;
+}
+
+.button_space{
+  margin-top: 40px;
+}
+
 
 a:hover{
   text-decoration: bold;
@@ -50,6 +70,10 @@ a:hover{
 
 .liste{
   line-height: 25px;
+}
+
+.fixed_footer{
+  position: fixed;
 }
 
 .karusell{
