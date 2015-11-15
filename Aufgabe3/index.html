@@ -18,25 +18,45 @@
     <div class="masterhead navbar-fixed-top">
       <div class="container">
         <div>
-          <h1 class="navbar-header title">Spendlr</h1>
+          <h1 class="navbar-header title"><a href="index.html">Spendlr</a></h1>
 
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="nav_item"><a href="#">Login</a></li>
-            <li class="nav_item"><a href="#">Start</a></li>
-            <li class="nav_item"><a href="#">Boards</a></li>
-            <li class="nav_item"><a href="#">Profil</a></li>
+            <li class="nav_item"><a href="#">+ Board</a></li>
+            <li class="nav_item"><a href="#">+ Produkt</a></li>
+
+            <!-- Quelle: http://bootsnipp.com/snippets/featured/inline-navbar-search-->
+            <form class="navbar-form" role="search">
+              <div class="input-group">
+                <input type="text" class="form-control pull-right" placeholder="suchen">
+                  <span class="input-group-btn">
+                    <button type="reset" class="btn btn-default">
+                      <span class="glyphicon glyphicon-remove">
+                        <span class="sr-only">Close</span>
+                      </span>
+                    </button>
+                      <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search">
+                          <span class="sr-only">suchen</span>
+                        </span>
+                      </button>
+                  </span>
+              </div>
+            </form>
+
+
+            <!--<li><form class="navbar-form" method="GET">
+              <label for="suche"><input type="text" id="suche" name="suche" placeholder="suchen"></label><input type="submit" value="go"></li>-->
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </div>
     <div></div>
 
     <div class="container">
       <div class="header">
-
-        <p class="description">Das ist eine Beschreibung</p>
     </div>
 
        <!-- Karussell Quelle: http://holdirbootstrap.de/examples/carousel/
@@ -102,11 +122,11 @@
         <div class="col-md-4 sidebar">
           <ol class="list-unstyled">
             <h3>Beliebteste Produkte</h3>
-            <li><a href="#">Weihnachtsgeschenke</a></li>
-            <li><a href="#">Handytaschen</a></li>
-            <li><a href="#">Ashley Goldberg</a></li>
-            <li><a href="#">Stempel</a></li>
-            <li><a href="#">Ruby</a></li>
+            <li><a class="liste" href="#">Weihnachtsgeschenke</a></li>
+            <li><a class="liste" href="#">Handytaschen</a></li>
+            <li><a class="liste" href="#">Ashley Goldberg</a></li>
+            <li><a class="liste" href="#">Stempel</a></li>
+            <li><a class="liste" href="#">Ruby</a></li>
           </ol>
         </div>
 
