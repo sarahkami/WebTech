@@ -28,6 +28,10 @@ body {
   color: black;
 }
 
+.login{
+  margin-top: 100px;
+}
+
 .title{
   font-size: 36px;
   color: black;
