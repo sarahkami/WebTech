@@ -1,30 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <title>Pi</title>
+  	<meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/customstyle.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/montecarlo.js"></script>
+  	<title>Pi</title>
   </head>
-  <body onload="draw();">
-    <div class="container">
-      <div class="col-md-5 main">
+
+  <body onload="drawCircle();">
+    <div class="wrap">
+  		<div class="container1">
         <canvas id="window" width="300" height="300"></canvas>
       </div>
-      <div class="col-md-5 info" id="slider">
-        <form>
-          <label>Genauigkeit</label>
-          <div id="slider">
-          niedrig <input type="range" id="slide" value="5" min="0" max="10" step="1"
-                    onchange="updateSlider(this.value)"/>hoch
-                    <br>
-          <label>Geschwindigkeit</label>
-          <input type="range" id="slide" value="5" min="0" max="10" step="1">
-        </form>
-      </div>
+  		<aside class="container2">
+          <form class="content">
+            <h1>Pi</h1>
+            <label for="accuracy">
+              Genauigkeit <input class="count" name="accuracy" id="accuracy">
+
+              <input type="range" id="slide" value="5" min="0" max="10" step="1"
+                      onchange="updateSlider(this.value)"/></label>
+              <br>
+              <label for="speed">
+                Geschwindigkeit <input class="count" name="speed" id="speed">
+                <input type="range" id="slide" value="5" min="0" max="10" step="1">
+              </label>
+              <div class="bla">
+            <label for="pi">
+              Aktueller Wert <input class="count" name="pi" id="pi">
+            </label>
+            <label for="dots">
+            Punkte <input class="count" name="dots" id="dots">
+            </label>
+          </div>
+          <div class="buttons">
+            <button type="button" id="start">Start</button>
+            <button type="button" id="stop">Stop</button>
+            <button type="button" id="download">Download</button>
+          </form>
+  		</aside>
     </div>
   </body>
 </html>
+
+
 
 <!--
 <div class="container">

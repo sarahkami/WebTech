@@ -6,16 +6,66 @@ canvas {
   float: left;
 }
 
-.container{
+.wrap{
   margin: 50px 200px 50px 200px;
   background-color: #bbccdd;
-}
+  display: block;
+  height: 300px;
+  width: 650px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  }
 
-.info{
-  margin: 10px 50px 10px 50px;
+.content{
   border: 1px solid green;
 }
-
-#scale{
-  width: 200px;
+label{
+  width: 300px;
 }
+
+.count{
+  width: 60px;
+  margin-left: 20px;
+}
+
+.container1{
+	min-width: 300px;
+	width: 50%;
+	padding-right: 50px;
+	float: left;
+	background-color: #99BBAA;
+}
+
+.container2{
+  display: block;
+  background-color: #ffeecc;
+  float: right;
+  height: 300px;
+  width: 50%;
+}
+
+.bla{
+  background-color: #ddeeee;
+  padding: 20px 0px 10px 0px;
+}
+
+input{
+  float: right;
+}
+
+.buttons {
+  background-color: #ffccaa;
+  padding-top; 50px;
+  float: right;
+ }
+
+ button{
+   padding-left: 15px;
+   padding-right: 15px;
+   margin-right: 22px;
+ }
+
+ h1{
+   text-align: center;
+   font-size: 30px;
+ }
