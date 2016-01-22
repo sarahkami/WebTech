@@ -1,0 +1,21 @@
+canvas {
+  border: 1px solid black;
+}
+
+#window{
+  float: left;
+}
+
+.container{
+  margin: 50px 200px 50px 200px;
+  background-color: #bbccdd;
+}
+
+.info{
+  margin: 10px 50px 10px 50px;
+  border: 1px solid green;
+}
+
+#scale{
+  width: 200px;
+}
