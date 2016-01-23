@@ -9,6 +9,7 @@
   </head>
 
   <body onload="drawCircle();">
+
     <div class="wrap">
   		<div class="container1">
         <canvas id="window" width="300" height="300"></canvas>
@@ -17,14 +18,17 @@
           <form class="content">
             <h1>Pi</h1>
             <label for="accuracy">
-              Genauigkeit <input class="count" name="accuracy" id="accuracy">
 
-              <input type="range" id="slide" value="5" min="0" max="10" step="1"
-                      onchange="updateSlider(this.value)"/></label>
+              Genauigkeit <input class="count" name="accuracy"
+                            id="accuracy" onchange="updateInfo()">
+              <input type="range" id="slide" value="5"
+                      min="1" max="10" step="1"
+                      onchange="alert(getElementById('slide').value)"/></label>
+
               <br>
               <label for="speed">
                 Geschwindigkeit <input class="count" name="speed" id="speed">
-                <input type="range" id="slide" value="5" min="0" max="10" step="1">
+                <input type="range" id="slide" value="5" min="1" max="10" step="1">
               </label>
               <div class="bla">
             <label for="pi">
