@@ -3,6 +3,10 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                             window.webkitRequestAnimationFrame ||
                             window.msRequestAnimationFrame;
 
+var pi = document.getElementById('pi'),
+    dots = document.getElementById('dots');
+
+
 //draw circle on canvas
 function drawCircle(){
   var canvas = document.getElementById('window');
@@ -12,7 +16,8 @@ function drawCircle(){
     var x = canvas.width / 2,
         y = canvas.height / 2,
         radius = 150;
-    ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.rect(0,0, canvas.width, canvas.height);
     ctx.lineWidth = 1;
     ctx.strokeStyle = 'black';
     ctx.stroke();
