@@ -76,9 +76,7 @@ montecarlo = function () {
       calcContext.putImageData(hit, dotx, doty);
     };
 
-    stop.onclick = function(){
-      stop == true;
-    };
+    //document.getElementById('stop').addEventListener("click", alert("Stop is clicked"));
 
     function loop(){
       for (var i = 0; i < 50; i++){
