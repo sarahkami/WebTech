@@ -1,3 +1,17 @@
+//draw Canvas initially by loading the website
+function drawCanvas(){
+  var canvas = document.getElementById('window'),
+      ctx = canvas.getContext('2d'),
+      x = canvas.width / 2,
+      y = canvas.height / 2,
+      radius = 150;
+
+    //draw circle on canvas
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.rect(0, 0, canvas.width, canvas.height);
+    ctx.stroke();
+};
+
 montecarlo = function () {
   (function () {
     var requestAnimationFrame = window.requestAnimationFrame ||
@@ -7,27 +21,15 @@ montecarlo = function () {
     window.requestAnimationFrame = requestAnimationFrame;
   })();
 
-  var pi = document.getElementById('pi'),
-      dots = document.getElementById('dots'),
-
+  var canvas = document.getElementById('window'),
       calcContext = document.getElementById('context').getContext('2d'), //throwctx
-      canvas = document.getElementById('window'),
-      ctx = canvas.getContext('2d'),
 
+      pi = document.getElementById('pi'),
+      dots = document.getElementById('dots'),
       inside = 0,
       outside = 0,
       total = 0,
 
-      x = canvas.width / 2,
-      y = canvas.height / 2,
-      radius = 150;
-
-    //draw circle on canvas
-    ctx.arc(x, y, radius, 0, 2 * Math.PI);
-    ctx.rect(0, 0, canvas.width, canvas.height);
-    //ctx.lineWidth = 1;
-    //ctx.strokeStyle = 'black';
-    ctx.stroke();
 
     //create red ImageData with 1px length
     dotRed = calcContext.createImageData(1,1);
@@ -38,10 +40,10 @@ montecarlo = function () {
 
     //create green ImageData with 1px length
     dotGreen = calcContext.createImageData(1,1);
-    dotGreen.data[0] = 255;
-    dotGreen.data[1] = 0;
-    dotGreen.data[2] = 255;
-    dotGreen.data[3] = 0;
+    dotGreen.data[0] = 0;
+    dotGreen.data[1] = 255;
+    dotGreen.data[2] = 0;
+    dotGreen.data[3] = 255;
 
     /**
     this function draws a random dot on the canvas,
@@ -53,7 +55,8 @@ montecarlo = function () {
       var x = Math.random() * 2 - 1,
           y = Math.random() * 2 - 1;
       // if dot is inside the circle
-      if (Math.pow(x, 2) + Math.pow(y, 2) <= 1){ //math.pow = square number
+      //math.pow = square number of x/y, <= less than or equal to
+      if (Math.pow(x, 2) + Math.pow(y, 2) <= 1){
           ++ inside;
           var hit = dotGreen;
       } else{
@@ -72,11 +75,27 @@ montecarlo = function () {
     };
 
     function loop(){
+      if (document.getElementById('start').value == 0){
       for (var i = 0; i < 50; i++){
         drawDot();
       }
       setTimeout(loop, 0);
+      return false;
     }
+    return true;
+  }
+
+  document.getElementById('stop').onclick = function(){
+    alert("stop is clicked");
+  }
+
+    //document.getElementById('stop').addEventListener("click", endLoop);
+  /**function endLoop(){
+    if (loop() == true)
+    document.getElementById('start').disabled = true;
+  }**/
+
+
 
     setTimeout(loop, 0);
   };
@@ -84,16 +103,7 @@ montecarlo = function () {
 
 
 
-/** if Dot in circle{
-      fillStyle = "red";
-      fillRect(x,y,1,1); // must be random rect
-    else{
-      fillStyle = "green";
-      fillRect(x,y,1,1); //must be random rect
-    }
-}**/
-/**  }
-
+/**
 function updateInfo (){
   var input = document.getElementById('slide').value;
   var output = document.getElementById('accuracy');

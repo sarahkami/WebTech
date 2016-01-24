@@ -8,7 +8,7 @@
   	<title>Pi</title>
   </head>
 
-  <body>
+  <body onload="drawCanvas()">
 
     <div class="wrap">
   		<div class="container1">
@@ -21,7 +21,7 @@
             <label for="accuracy">
 
               Genauigkeit <input class="count" name="accuracy"
-                            id="accuracy" onchange="updateInfo()">
+                            id="accuracy" onload="updateInfo()">
               <input type="range" id="slide" value="5"
                       min="1" max="10" step="1"
                       onchange="alert(getElementById('slide').value)"/></label>
