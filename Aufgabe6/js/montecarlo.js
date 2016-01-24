@@ -43,13 +43,6 @@ montecarlo = function () {
     dotGreen.data[2] = 255;
     dotGreen.data[3] = 0;
 
-    function loop(){
-      for (var i = 0; i < 50; i++){
-        drawDot();
-      }
-      setTimeout(loop, 0);
-    }
-
     /**
     this function draws a random dot on the canvas,
     if the dot is inside the circle it's green, otherweise red.
@@ -69,14 +62,21 @@ montecarlo = function () {
       }
       ++ total;
       //recalculate "Punkte"
-      dots.textContext = total;
+      dots.value = total;
       //recalculate PI "Aktueller Wert"
-      pi.textContext = 4 * inside / total;
+      pi.value = 4 * inside / total;
       //draw dot
       var dotx = (x + 1) / 2 * canvas.width,
           doty = (y + 1) / 2 * canvas.height;
       calcContext.putImageData(hit, dotx, doty);
     };
+
+    function loop(){
+      for (var i = 0; i < 50; i++){
+        drawDot();
+      }
+      setTimeout(loop, 0);
+    }
 
     setTimeout(loop, 0);
   };
@@ -110,82 +110,4 @@ function updateInput(){
     o.innerHTML = i.value;
   }, false);
 }
-
-/**
-    function updateValue(accuracy) {
-        var slider = document.getElementById('slide');
-        var accuracy = document.getElementById('accuracy');
-        if(window.addEventListener){
-          slider.attachEvent('onchange', function (){
-            accuracy.innerHTML = slider.value;
-            window.resizeTo(parseInt(slider.value), 400);
-          })
-        }
-    }
-
-
-    function Aendern(){
-      var update = "2";
-      document.getElementById("accuracy").innerHTML = update;
-    }
-
-/**
-  var slide = document.getElementById("slide").value;
-  var buttonInput = document.getElementById("btn");
-
-  if (buttonInput.addEventListener) {
-      buttonInput.addEventListener("click", testtest, false);
-  }
-  else if (buttonInput.attachEvent) {
-      buttonInput.attachEvent('onclick', testtest);
-  }
-
-  function testtest(e) {
-      if (rangeInput > 0 && rangeInput < 5) {
-          alert("First");
-      } else {
-          alert("Second");
-      }
-  }
-
-
-
-/**
-var start = document.getElementById('start'),
-	stop = document.getElementById('stop'),
-	download = document.getElementById('download'),
-	elem = document.getElementById("window"); //elem muss der Kreis sein oder beides
-var requestID = undefined;
-var startTime = undefined;
-
-function render(time) {
-	if (time === undefined) {
-		time = Date.now();
-	}
-	if (startTime === undefined) {
-		startTime = time;
-	}
-	elem.style.left = ((time - startTime) / 10 % 800) + "px";
-}
-
-function animate() {
-	render();
-	requestID = requestAnimationFrame(animate, elem);
-}
-
-function stopAnimation() {
-	if (requestID) {
-		cancelAnimationFrame(requestID);
-		requestID = undefined;
-	}
-}
-startBtn.addEventListener('click', function () {
-	animate();
-});
-stopBtn.addEventListener('click', stopAnimation);
-resetBtn.addEventListener('click', function () {
-	stopAnimation();
-	elem.style.left = "0px";
-	startTime = undefined;
-});
 **/
