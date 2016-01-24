@@ -26,6 +26,8 @@ montecarlo = function () {
 
       pi = document.getElementById('pi'),
       dots = document.getElementById('dots'),
+      stop = document.getElementById('stop'),
+      stop = false;
       inside = 0,
       outside = 0,
       total = 0,
@@ -74,20 +76,18 @@ montecarlo = function () {
       calcContext.putImageData(hit, dotx, doty);
     };
 
+    stop.onclick = function(){
+      stop == true;
+    };
+
     function loop(){
-      if (document.getElementById('start').value == 0){
       for (var i = 0; i < 50; i++){
         drawDot();
       }
-      setTimeout(loop, 0);
-      return false;
+      setTimeout(loop, 0); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
     }
-    return true;
-  }
 
-  document.getElementById('stop').onclick = function(){
-    alert("stop is clicked");
-  }
+
 
     //document.getElementById('stop').addEventListener("click", endLoop);
   /**function endLoop(){
@@ -96,8 +96,8 @@ montecarlo = function () {
   }**/
 
 
-
-    setTimeout(loop, 0);
+    // sets how fast the function will be performed, 0 = initially
+      setTimeout(loop, 0);
   };
 
 
