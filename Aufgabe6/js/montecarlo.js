@@ -40,7 +40,7 @@ window.onload = function(){
 var montecarlo = (function () {
 
   var running, canvas, calcContext, pi, dots, stop,
-      inside, outside, total, redDot, greenDot;
+      inside, outside, total, redDot, greenDot, progress;
 
   var requestAnimationFrame = window.requestAnimationFrame ||
                             window.mozRequestAnimationFrame ||
@@ -53,7 +53,7 @@ var montecarlo = (function () {
     calcContext = document.getElementById('context').getContext('2d');
     pi = document.getElementById('pi');
     dots = document.getElementById('dots');
-    //stop = document.getElementById('stop');
+    progress = document.getElementById('progress');
     inside = 0;
     outside = 0;
     total = 0;
@@ -133,7 +133,8 @@ var montecarlo = (function () {
         drawDot();
       }
     }
-    setTimeout(loop, 50); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
+    setTimeout(loop, 20); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
+
   }
 
   return {init: init, start: start, stop: stop, download: download};
