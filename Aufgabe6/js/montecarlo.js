@@ -1,3 +1,15 @@
+function updateAccuracy (){
+  var input = document.getElementById('slide1').value;
+  var output = document.getElementById('accuracy');
+   output.value = input;
+};
+
+function updateSpeed (){
+  var input = document.getElementById('slide2').value;
+  var output = document.getElementById('speed');
+   output.value = input;
+};
+
 //draw Canvas initially by loading the website
 function drawCanvas(){
   var canvas = document.getElementById('window'),
@@ -12,6 +24,7 @@ function drawCanvas(){
     ctx.stroke();
 };
 
+//Main function for the animation, executed by button click "start"
 montecarlo = function () {
   (function () {
     var requestAnimationFrame = window.requestAnimationFrame ||
@@ -47,6 +60,12 @@ montecarlo = function () {
     dotGreen.data[2] = 0;
     dotGreen.data[3] = 255;
 
+    function calcPi(){
+      var decimal = document.getElementById('accuracy').value;
+          pi.value = 4 * inside / total;
+          parseFloat(pi.value).toFixed(decimal);
+    };
+
     /**
     this function draws a random dot on the canvas,
     if the dot is inside the circle it's green, otherweise red.
@@ -69,7 +88,7 @@ montecarlo = function () {
       //recalculate "Punkte"
       dots.value = total;
       //recalculate PI "Aktueller Wert"
-      pi.value = 4 * inside / total;
+      calcPi();
       //draw dot
       var dotx = (x + 1) / 2 * canvas.width,
           doty = (y + 1) / 2 * canvas.height;
@@ -79,10 +98,13 @@ montecarlo = function () {
     //document.getElementById('stop').addEventListener("click", alert("Stop is clicked"));
 
     function loop(){
+
+      var speed = document.getElementById('speed').value;
+
       for (var i = 0; i < 50; i++){
         drawDot();
       }
-      setTimeout(loop, 0); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
+      setTimeout(loop, speed); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
     }
 
 
@@ -100,13 +122,14 @@ montecarlo = function () {
 
 
 
-
 /**
-function updateInfo (){
-  var input = document.getElementById('slide').value;
-  var output = document.getElementById('accuracy');
-   output.innerHTML = input;
-}
+          function download() {
+            var image = document.getElementById('wrap');
+            var blob = new Blob ([image], {type:text/html});
+
+          };
+
+
 
 /**
 function updateInput(){

@@ -10,7 +10,7 @@
 
   <body onload="drawCanvas()">
 
-    <div class="wrap">
+    <div id="wrap">
   		<div class="container1">
         <canvas class= "overlap" id="context" width="300" height="300"></canvas>
         <canvas class = "overlap" id = "window" width="300" height="300"></canvas>
@@ -21,15 +21,16 @@
             <label for="accuracy">
 
               Genauigkeit <input class="count" name="accuracy"
-                            id="accuracy" onload="updateInfo()">
-              <input type="range" id="slide" value="5"
-                      min="1" max="10" step="1"
-                      onchange="alert(getElementById('slide').value)"/></label>
+                            id="accuracy" value="5">
+              <input type="range" id="slide1" value="5"
+                      min="1" max="9" step="1"
+                      onchange="updateAccuracy()"/></label>
 
               <br>
               <label for="speed">
-                Geschwindigkeit <input class="count" name="speed" id="speed">
-                <input type="range" id="slide" value="5" min="1" max="10" step="1">
+                Geschwindigkeit <input class="count" name="speed" id="speed" value="500">
+                <input type="range" id="slide2" value="500" min="0" max="1000" step="100"
+                        onchange="updateSpeed()">
               </label>
               <div class="bla">
             <label for="pi">
@@ -42,7 +43,7 @@
           <div class="buttons">
             <button type="button" id="start" onclick="montecarlo()">Start</button>
             <button type="button" id="stop">Stop</button>
-            <button type="button" id="download">Download</button>
+              <button type="button" id="download">Download</button>
           </form>
   		</aside>
     </div>
