@@ -1,9 +1,11 @@
+//update Texfield "Genauigkeit" by slider onChange
 function updateAccuracy (){
   var input = document.getElementById('slide1').value;
   var output = document.getElementById('accuracy');
    output.value = input;
 };
 
+//update Texfield "Geschwindigkeit" by slider onChange
 function updateSpeed (){
   var input = document.getElementById('slide2').value;
   var output = document.getElementById('speed');
@@ -60,6 +62,7 @@ montecarlo = function () {
     dotGreen.data[2] = 0;
     dotGreen.data[3] = 255;
 
+    //calculate Pi by passing in the requested decimal place
     function calcPi(){
       var decimal = document.getElementById('accuracy').value;
           pi.value = parseFloat((4 * inside / total).toFixed(decimal));
@@ -95,32 +98,28 @@ montecarlo = function () {
     };
 
     //document.getElementById('stop').addEventListener("click", alert("Stop is clicked"));
+    document.getElementById('start').addEventListener("click", console.log("hello"));
+
+
 
     function loop(){
 
       var speed = document.getElementById('speed').value;
+
 
       for (var i = 0; i < 50; i++){
         drawDot();
       }
       setTimeout(loop, speed); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
     }
-
-
-
-    //document.getElementById('stop').addEventListener("click", endLoop);
-  /**function endLoop(){
-    if (loop() == true)
-    document.getElementById('start').disabled = true;
-  }**/
-
-
     // sets how fast the function will be performed, 0 = initially
       setTimeout(loop, 0);
   };
 
+/**
+  function stopLoop(){
 
-
+  }
 /**
           function download() {
             var image = document.getElementById('wrap');

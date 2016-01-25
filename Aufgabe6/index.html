@@ -43,26 +43,11 @@
           <div class="buttons">
             <button type="button" id="start" onclick="montecarlo()">Start</button>
             <button type="button" id="stop">Stop</button>
-              <button type="button" id="download">Download</button>
-          </form>
+            <button type="button" id="download" onclick="stop()">Download</button>
+          </div>
+          <progress value="0" max="100"></progress>
+        </form>
   		</aside>
     </div>
   </body>
-</html>
-
-
-
-<!--
-<div class="container">
-    <div class="info">
-    <form>
-      <label>Genauigkeit</label>
-      <input type="range" id="scale" value="5" min="0" max="10" step="1">
-      <label>Geschwindigkeit</label>
-      <input type="range" id="scale" value="5" min="0" max="10" step="1">
-    </form>
-      </div>
-<canvas id="window" width="300" height="300"></canvas>
-</div>
-</body>
 </html>
