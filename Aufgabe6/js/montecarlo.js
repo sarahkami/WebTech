@@ -88,7 +88,6 @@ var montecarlo = (function () {
     var link = document.getElementById('download');
     link.href = document.getElementById('context').toDataURL();
     link.download = 'montecarlo.png';
-    console.log(link.href);
 }
 
   //calculate Pi by passing in the requested decimal place
