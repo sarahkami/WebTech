@@ -62,8 +62,7 @@ montecarlo = function () {
 
     function calcPi(){
       var decimal = document.getElementById('accuracy').value;
-          pi.value = 4 * inside / total;
-          parseFloat(pi.value).toFixed(decimal);
+          pi.value = parseFloat((4 * inside / total).toFixed(decimal));
     };
 
     /**
