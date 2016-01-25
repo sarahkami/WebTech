@@ -32,6 +32,7 @@ window.onload = function(){
   montecarlo.init();
   document.getElementById('start').addEventListener('click', montecarlo.start);
   document.getElementById('stop').addEventListener('click', montecarlo.stop);
+  document.getElementById('download').addEventListener('click', montecarlo.download);
 }
 
 
@@ -83,6 +84,13 @@ var montecarlo = (function () {
     running = false;
   }
 
+ var download = function () {
+    var link = document.getElementById('download');
+    link.href = document.getElementById('context').toDataURL();
+    link.download = 'montecarlo.png';
+    console.log(link.href);
+}
+
   //calculate Pi by passing in the requested decimal place
   function calcPi(){
     var decimal = document.getElementById('accuracy').value;
@@ -129,5 +137,5 @@ var montecarlo = (function () {
     setTimeout(loop, 50); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
   }
 
-  return {init: init, start: start, stop: stop};
+  return {init: init, start: start, stop: stop, download: download};
 })();
