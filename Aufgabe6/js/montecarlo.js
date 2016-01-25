@@ -26,27 +26,36 @@ function drawCanvas(){
     ctx.stroke();
 };
 
+
+window.onload = function(){
+  drawCanvas();
+  montecarlo.init();
+  document.getElementById('start').addEventListener('click', montecarlo.start);
+  document.getElementById('stop').addEventListener('click', montecarlo.stop);
+}
+
+
 //Main function for the animation, executed by button click "start"
-montecarlo = function () {
-  (function () {
-    var requestAnimationFrame = window.requestAnimationFrame ||
+var montecarlo = (function () {
+
+  var running, canvas, calcContext, pi, dots, stop,
+      inside, outside, total, redDot, greenDot;
+
+  var requestAnimationFrame = window.requestAnimationFrame ||
                             window.mozRequestAnimationFrame ||
                             window.webkitRequestAnimationFrame ||
                             window.msRequestAnimationFrame;
-    window.requestAnimationFrame = requestAnimationFrame;
-  })();
+  window.requestAnimationFrame = requestAnimationFrame;
 
-  var canvas = document.getElementById('window'),
-      calcContext = document.getElementById('context').getContext('2d'), //throwctx
-
-      pi = document.getElementById('pi'),
-      dots = document.getElementById('dots'),
-      stop = document.getElementById('stop'),
-      stop = false;
-      inside = 0,
-      outside = 0,
-      total = 0,
-
+  function init(){
+    canvas = document.getElementById('window');
+    calcContext = document.getElementById('context').getContext('2d');
+    pi = document.getElementById('pi');
+    dots = document.getElementById('dots');
+    //stop = document.getElementById('stop');
+    inside = 0;
+    outside = 0;
+    total = 0;
 
     //create red ImageData with 1px length
     dotRed = calcContext.createImageData(1,1);
@@ -62,81 +71,63 @@ montecarlo = function () {
     dotGreen.data[2] = 0;
     dotGreen.data[3] = 255;
 
-    //calculate Pi by passing in the requested decimal place
-    function calcPi(){
-      var decimal = document.getElementById('accuracy').value;
-          pi.value = parseFloat((4 * inside / total).toFixed(decimal));
-    };
+    // sets how fast the function will be performed, 0 = initially
+    setTimeout(loop, 0);
+  }
 
-    /**
-    this function draws a random dot on the canvas,
-    if the dot is inside the circle it's green, otherweise red.
-    It counts the total of dots and sets the content of textfield ("Punkte").
-    It sets the value of PI to textfield ("Aktueller Wert").
-    **/
-    function drawDot(){
-      var x = Math.random() * 2 - 1,
-          y = Math.random() * 2 - 1;
-      // if dot is inside the circle
-      //math.pow = square number of x/y, <= less than or equal to
-      if (Math.pow(x, 2) + Math.pow(y, 2) <= 1){
-          ++ inside;
-          var hit = dotGreen;
-      } else{
-          ++ outside;
-          var hit = dotRed;
-      }
-      ++ total;
-      //recalculate "Punkte"
-      dots.value = total;
-      //recalculate PI "Aktueller Wert"
-      calcPi();
-      //draw dot
-      var dotx = (x + 1) / 2 * canvas.width,
-          doty = (y + 1) / 2 * canvas.height;
-      calcContext.putImageData(hit, dotx, doty);
-    };
+  function start(){
+    running = true;
+  }
 
-    //document.getElementById('stop').addEventListener("click", alert("Stop is clicked"));
-    document.getElementById('start').addEventListener("click", console.log("hello"));
+  function stop(){
+    running = false;
+  }
 
+  //calculate Pi by passing in the requested decimal place
+  function calcPi(){
+    var decimal = document.getElementById('accuracy').value;
+        pi.value = parseFloat((4 * inside / total).toFixed(decimal));
+  };
 
+  /**
+  this function draws a random dot on the canvas,
+  if the dot is inside the circle it's green, otherweise red.
+  It counts the total of dots and sets the content of textfield ("Punkte").
+  It sets the value of PI to textfield ("Aktueller Wert").
+  **/
+  function drawDot(){
+    var x = Math.random() * 2 - 1,
+        y = Math.random() * 2 - 1;
+    // if dot is inside the circle
+    //math.pow = square number of x/y, <= less than or equal to
+    if (Math.pow(x, 2) + Math.pow(y, 2) <= 1){
+        ++ inside;
+        var hit = dotGreen;
+    } else{
+        ++ outside;
+        var hit = dotRed;
+    }
+    ++ total;
+    //recalculate "Punkte"
+    dots.value = total;
+    //recalculate PI "Aktueller Wert"
+    calcPi();
+    //draw dot
+    var dotx = (x + 1) / 2 * canvas.width,
+        doty = (y + 1) / 2 * canvas.height;
+    calcContext.putImageData(hit, dotx, doty);
+  };
 
-    function loop(){
+  function loop(){
+    var speed = document.getElementById('speed').value;
 
-      var speed = document.getElementById('speed').value;
-
-
+    if (running) {
       for (var i = 0; i < 50; i++){
         drawDot();
       }
-      setTimeout(loop, speed); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
     }
-    // sets how fast the function will be performed, 0 = initially
-      setTimeout(loop, 0);
-  };
-
-/**
-  function stopLoop(){
-
+    setTimeout(loop, speed); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
   }
-/**
-          function download() {
-            var image = document.getElementById('wrap');
-            var blob = new Blob ([image], {type:text/html});
 
-          };
-
-
-
-/**
-function updateInput(){
-  var i = document.getElementById('slide'),
-      o = document.getElementById('accuracy');
-
-  o.innerHTML = i.value;
-  i.addEventListener('change', function () {
-    o.innerHTML = i.value;
-  }, false);
-}
-**/
+  return {init: init, start: start, stop: stop};
+})();
