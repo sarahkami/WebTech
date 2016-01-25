@@ -122,11 +122,11 @@ var montecarlo = (function () {
     var speed = document.getElementById('speed').value;
 
     if (running) {
-      for (var i = 0; i < 50; i++){
+      for (var i = 0; i < speed; i++){
         drawDot();
       }
     }
-    setTimeout(loop, speed); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
+    setTimeout(loop, 50); //0 = geschwindigkeit, clearTimeout() to prevent the function from running
   }
 
   return {init: init, start: start, stop: stop};
