@@ -36,10 +36,10 @@ window.onload = function(){
 }
 
 
-//Main function for the animation, executed by button click "start"
+//Function scope, functions get called at the end
 var montecarlo = (function () {
 
-  var running, canvas, calcContext, pi, dots, stop,
+  var running, canvas, context, pi, dots, stop,
       inside, outside, total, redDot, greenDot, progress;
 
   var requestAnimationFrame = window.requestAnimationFrame ||
@@ -50,7 +50,7 @@ var montecarlo = (function () {
 
   function init(){
     canvas = document.getElementById('window');
-    calcContext = document.getElementById('context').getContext('2d');
+    context = document.getElementById('context').getContext('2d');
     pi = document.getElementById('pi');
     dots = document.getElementById('dots');
     progress = document.getElementById('progress');
@@ -59,14 +59,14 @@ var montecarlo = (function () {
     total = 0;
 
     //create red ImageData with 1px length
-    dotRed = calcContext.createImageData(1,1);
+    dotRed = context.createImageData(1,1);
     dotRed.data[0] = 255;
     dotRed.data[1] = 0;
     dotRed.data[2] = 0;
     dotRed.data[3] = 255;
 
     //create green ImageData with 1px length
-    dotGreen = calcContext.createImageData(1,1);
+    dotGreen = context.createImageData(1,1);
     dotGreen.data[0] = 0;
     dotGreen.data[1] = 255;
     dotGreen.data[2] = 0;
@@ -122,7 +122,7 @@ var montecarlo = (function () {
     //draw dot
     var dotx = (x + 1) / 2 * canvas.width,
         doty = (y + 1) / 2 * canvas.height;
-    calcContext.putImageData(hit, dotx, doty);
+    context.putImageData(hit, dotx, doty);
   };
 
   function loop(){
